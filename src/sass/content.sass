@@ -33,6 +33,8 @@ input:-moz-placeholder
    transition: 0.5s all
    overflow-y: auto
    overflow-x: hidden
+.q 
+   display: flex
 .popup__bg.active, .popup__bg2.active, .popup__bg3.active
    opacity: 1
    pointer-events: all
@@ -119,6 +121,40 @@ input:-moz-placeholder
    background-color: $grey
 .nav 
    padding: 44px 0
+   &__bottom, #nav__bottom
+      align-items: center 
+      margin-top: 28px
+      justify-content: flex-end
+      a 
+         -webkit-background-clip: text
+         background-clip: text
+         webkit-text-fill-color: initial !important
+         text-fill-color: inherit !important
+         -webkit-text-fill-color: initial !important
+         .svg 
+            margin-left: 10px
+         &:nth-child(1)
+            color: #2198D4 !important
+            &:before 
+               background: linear-gradient(271.17deg, #91DAFF 0%, #2198D4 82.08%) !important
+            &:after 
+               background: linear-gradient(#0A090E, #0A090E) padding-box, linear-gradient(to right, #2198D4, #2198D4 ) border-box !important
+            &:hover 
+               color: white !important
+               .svg 
+                  path 
+                     fill: white
+         &:nth-child(2)
+            color: #73E36E !important
+            &:before 
+               background: linear-gradient(271.17deg, #73E36E 0%, #73E36E 82.08%) !important
+            &:after 
+               background: linear-gradient(#0A090E, #0A090E) padding-box, linear-gradient(to right, #73E36E, #73E36E ) border-box !important
+            &:hover 
+               color: white !important
+               .svg 
+                  path 
+                     fill: white
    &__row 
       justify-content: flex-end
       align-items: center
@@ -184,11 +220,58 @@ input:-moz-placeholder
          &:hover 
             a 
                color: rgba(255,153,0,1)
+.header-new
+   align-items: center
+   margin-top: 164px
+   &__sub 
+      margin-right: 32px
+      color: #FFF
+      font-size: 16px
+      font-weight: 400
+      line-height: normal
+   &__stars 
+      align-items: center
+      display: none
+   &__item 
+      margin-right: 13px
+      width: 244px
+      height: 102px
+      text-align: center
+      flex-direction: column 
+      align-items: center
+      background: url(../img/new.svg) no-repeat center center / cover
+      padding-top: 14px
+   &__top 
+      align-items: center
+      position: relative
+      left: -2px
+      margin-bottom: 10px
+      p 
+         color: #FFF
+         font-size: 28px
+         font-weight: 700
+         line-height: normal
+         span
+            display: none
+   &__icon 
+      margin-right: 11px
+   &__text 
+      color: #FFF
+      font-size: 12px
+      font-weight: 400
+      position: relative
+      left: -2px
+      line-height: normal
+   &__row 
+      margin-right: 5px
+   &__logo 
+      position: relative
+      top: -4px
 .header 
-   padding-bottom: 194px
+   padding-bottom: 64px
    &__box
       position: relative
-      margin-top: 104px
+      margin-top: 50px
    &__pic
       position: absolute
       right: -556px
@@ -390,6 +473,7 @@ input:-moz-placeholder
       width: 100%
       max-width: 470px
       margin-right: 28px
+      margin-top: 24px
    &__text
       font-size: 16px
       line-height: 22px
@@ -406,6 +490,40 @@ input:-moz-placeholder
          line-height: 62px
          position: relative
          left: 8px
+.buy 
+   padding-top: 100px
+   h2 
+      margin-bottom: 21px
+   &__box 
+      align-items: flex-start
+      justify-content: space-between
+   &__content 
+      flex: 1 0 auto 
+      width: 100%
+      max-width: 915px
+   &__name 
+      color: #FFF
+      font-size: 24px
+      font-weight: 700
+      line-height: normal
+      margin-bottom: 20px
+   &__bol 
+      color: #FFF
+      font-size: 24px
+      font-weight: 700
+      line-height: normal
+      margin-bottom: 20px
+   .or 
+      color: #FF7A00
+      font-weight: bold
+   &__text 
+      color: #FFF
+      font-size: 24px
+      font-weight: 400
+      line-height: normal
+      margin-bottom: 20px
+   &__pic 
+      margin-top: 40px
 .free 
    padding: 158px 0 44px
    .container  
@@ -802,24 +920,21 @@ input:-moz-placeholder
    &__box 
       justify-content: space-between
       margin-top: 70px
+      align-items: center
    &__content 
-      max-width: 571px 
+      max-width: 545px 
       width: 100%
       justify-content: space-between
       flex-wrap: wrap
+      align-items: center
    &__item 
-      text-align: center
       margin-bottom: 30px
-      width: 270.5px
-      height: 235px
-      background: rgba(250, 250, 255, 0.06)
-      border: 1px solid rgba(246, 75, 2, 0.2)
-      border-radius: 22px
-      padding: 20px
-      &:nth-child(4),&:nth-child(3)
-         height: 171px
+      align-items: center
+      width: auto !important
+      height: auto !important
    &__icon 
-      margin-bottom: 20px
+      margin-bottom: 0px
+      margin-right: 40px
    &__name 
       font-size: 16px
       line-height: 22px
@@ -832,6 +947,17 @@ input:-moz-placeholder
       margin-bottom: 10px
       color: $grey
       display: block
+   &__right 
+      position: relative
+      &:before 
+         content: ""
+         position: absolute
+         left: -21px
+         top: -3px
+         display: block
+         height: 100%
+         width: 1px
+         background: linear-gradient(271deg, #F34900 0%, #F90 82.08%)
 .footer 
    padding: 27px 0 40px
    &__box 
@@ -911,7 +1037,7 @@ input:-moz-placeholder
                color: #FF9900 
       .onCF li ul
          width: 447px
-         height: 114px
+         height: 121px
          background: url(/img/new2.svg) no-repeat center center 
          border-radius: 0px
          border: none
@@ -927,6 +1053,14 @@ input:-moz-placeholder
       .selectCF .arrowCF
          right: 26px
          top: 18px
+   .selectCF li ul li
+      height: 22px
+      font-weight: 700
+      font-size: 12px
+      overflow: visible
+      line-height: 22px
+   .selectCF li ul li
+      padding-top: 5px
 .calc 
    padding: 70px 0 60px
    overflow: visible
@@ -990,15 +1124,22 @@ input:-moz-placeholder
             height: 30px
             background: linear-gradient(271.17deg, #F34900 0%, #FF9900 82.08%)
 .menu-btn2 
-   width: 113px
-   height: 113px
    position: fixed
    right: 2%
-   top: 71%
+   top: 89%
    z-index: 10
-   background: url(/img/mess.png) no-repeat
    cursor: pointer
+   width: 302px
+   height: 48px
    opacity: 0.7
+   &:after 
+      background: #4BB746
+      align-items: center
+      display: flex
+   .svg 
+      margin-left: 10px
+   span 
+      font-weight: 600
 .menu2 
    position: fixed
    right: -100%
@@ -1011,17 +1152,26 @@ input:-moz-placeholder
    overflow: hidden
 .menu2.active
    right: 13%
-   top: 66%
+   top: 86%
    transform: translateX(0)
 .menu-btn2.active 
    overflow: visible
    position: fixed
    background: url(/img/close2.svg) no-repeat
    right: 8.8%
-   top: 69%
+   top: 89%
    width: 52px
    height: 52px
-   opacity: 1
+   border: none
+   &:after 
+      background: transparent
+      display: none
+   &:before 
+      display: none
+   span 
+      display: none
+   .svg 
+      display: none
 .menu2
    &__link 
       margin-bottom: 20px
@@ -1266,3 +1416,47 @@ ul.info li
    overflow: hidden
 .mob 
    display: none
+.new 
+   padding: 130px 0 25px
+   h2 
+      font-size: 56px
+      line-height: 113%
+      margin-bottom: 24px
+      span 
+         background: linear-gradient(271.17deg, #F34900 0%, #FF9900 82.08%)
+         -webkit-background-clip: text
+         -webkit-text-fill-color: transparent
+         background-clip: text
+         text-fill-color: transparent
+   &__box 
+      align-items: center
+      justify-content: space-between
+      margin-top: 60px
+   &__content 
+      width: 100%
+      max-width: 695px
+      li 
+         display: flex
+         align-items: center
+         margin-bottom: 34px
+         p 
+            margin-left: 15px
+            color: #FFF
+            font-size: 20px
+            font-weight: 600
+            line-height: 120%
+         &:last-child
+            margin-bottom: 0
+   &__block
+      width: 690px
+      height: 58px
+      font-size: 20px
+      margin-top: 50px
+      pointer-events: none
+   &__sub 
+      margin-top: 20px
+      text-align: center
+      color: #FFF
+      font-size: 16px
+      font-weight: 400
+      opacity: 0.800000011920929
